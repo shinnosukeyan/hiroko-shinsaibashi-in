@@ -6,7 +6,7 @@
     <title>深夜【入室】案内 - レンタルスペース</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 10px; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        body { font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 10px; }
         .container { max-width: 500px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
         .header { background: linear-gradient(45deg, #1dd1a1, #10ac84); color: white; padding: 20px; text-align: center; }
         .header h1 { font-size: 1.4em; margin-bottom: 5px; }
@@ -131,4 +131,69 @@
                             ✅ 深夜キーをキーボックスに返却し、無事に入室しました
                         </button>
                         <div id="completionMessage" class="completion-message" style="display: none;">
-                            <p>
+                            <p>✅ <strong>ようこそ！</strong></p>
+                            <p>入室のご報告、ありがとうございます。</p>
+                            <hr style="border: none; border-top: 1px solid #c3e6cb; margin: 10px 0;">
+                            <p style="font-weight: bold;">すべての操作は完了です。<br>このページは閉じていただいて大丈夫です。</p>
+                        </div>
+                        <p class="supplementary-note">※ご報告のため、最後に必ず押してください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const correctPassword = "0621";
+        
+        function checkPassword() {
+            const password = prompt("深夜利用案内をご覧いただくため、パスワードを入力してください:");
+            
+            if (password === correctPassword) {
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('password-message').style.display = 'none';
+                sessionStorage.setItem('authenticated', 'true');
+            } else if (password !== null) {
+                alert("パスワードが正しくありません。");
+                checkPassword();
+            }
+        }
+        
+        window.addEventListener('load', function() {
+            if (sessionStorage.getItem('authenticated') === 'true') {
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('password-message').style.display = 'none';
+            } else {
+                document.getElementById('main-content').style.display = 'none';
+                document.getElementById('password-message').style.display = 'block';
+                checkPassword();
+            }
+        });
+        
+        document.getElementById('completionBtn').addEventListener('click', function() {
+            const formData = new FormData();
+            formData.append('完了日時', new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }));
+            formData.append('ブラウザ情報', navigator.userAgent);
+            formData.append('_subject', '【通知】深夜キーを利用して入室がありました');
+
+            fetch('https://formspree.io/f/myzjnklr', { // ← ご自身のFormspree IDに変更してください
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            this.disabled = true;
+            this.style.animation = 'none';
+            this.style.background = '#6c757d';
+            this.innerHTML = '✅ 報告済み';
+            
+            document.querySelector('.call-to-action').style.display = 'none';
+            document.querySelector('.supplementary-note').style.display = 'none';
+
+            document.getElementById('completionMessage').style.display = 'block';
+        });
+        
+        document.addEventListener('touchstart', function() {}, {passive: true});
+    </script>
+</body>
+</html>
