@@ -87,18 +87,17 @@
                             </div>
                         </div>
                         
-                        <p style="margin-top: 15px; font-weight: bold;">ポストから青いケースを取り出してください。</p>
                         <img src="06.jpeg" alt="ケースに入った鍵" class="real-image">
                         <div class="image-caption">📷 ケースの中に鍵が入っています</div>
                         <img src="07.jpeg" alt="ポストにケースを戻す" class="real-image">
                         <div class="image-caption">📷 ケースはポストに戻してください</div>
 
-                        <p style="margin-top:15px;"><strong>重要：</strong>キーを取り出したら、ポストの扉をしっかり閉めてください。</p>
+                        <p style="margin-top:15px;"><strong>重要：</strong>扉を閉め、ダイヤルを「0」に戻してください。</p>
                     </div>
 
                     <div class="step">
                         <span class="step-number">2</span>
-                        <strong>深夜キーで建物のロックを「解錠」する</strong>
+                        <strong>建物入口（シャッター横の扉）を開ける</strong>
                         <p>レンタルスペースのある建物に戻り、先ほど取り出した深夜キーでシャッター横の扉を「解錠」して中に入ります。</p>
                         <img src="04.jpeg" alt="建物入口の扉" class="real-image">
                         <div class="image-caption">📷 深夜キーでこの扉を解錠してください</div>
@@ -132,71 +131,4 @@
                             ✅ 深夜キーをキーボックスに返却し、無事に入室しました
                         </button>
                         <div id="completionMessage" class="completion-message" style="display: none;">
-                            <p>✅ <strong>ようこそ！</strong></p>
-                            <p>入室のご報告、ありがとうございます。</p>
-                            <hr style="border: none; border-top: 1px solid #c3e6cb; margin: 10px 0;">
-                            <p style="font-weight: bold;">すべての操作は完了です。<br>このページは閉じていただいて大丈夫です。</p>
-                        </div>
-                        <p class="supplementary-note">※ご報告のため、最後に必ず押してください。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        const correctPassword = "0621";
-        
-        function checkPassword() {
-            const password = prompt("深夜利用案内をご覧いただくため、パスワードを入力してください:");
-            
-            if (password === correctPassword) {
-                document.getElementById('main-content').style.display = 'block';
-                document.getElementById('password-message').style.display = 'none';
-                sessionStorage.setItem('authenticated', 'true');
-            } else if (password !== null) {
-                alert("パスワードが正しくありません。");
-                checkPassword();
-            }
-        }
-        
-        window.addEventListener('load', function() {
-            if (sessionStorage.getItem('authenticated') === 'true') {
-                document.getElementById('main-content').style.display = 'block';
-                document.getElementById('password-message').style.display = 'none';
-            } else {
-                document.getElementById('main-content').style.display = 'none';
-                document.getElementById('password-message').style.display = 'block';
-                checkPassword();
-            }
-            
-            document.body.style.opacity = '1';
-        });
-        
-        document.getElementById('completionBtn').addEventListener('click', function() {
-            const formData = new FormData();
-            formData.append('完了日時', new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }));
-            formData.append('ブラウザ情報', navigator.userAgent);
-            formData.append('_subject', '【通知】深夜キーを利用して入室がありました');
-
-            fetch('https://formspree.io/f/myzjnklr', { // ← ご自身のFormspree IDに変更してください
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
-
-            this.disabled = true;
-            this.style.animation = 'none';
-            this.style.background = '#6c757d';
-            this.innerHTML = '✅ 報告済み';
-            
-            document.querySelector('.call-to-action').style.display = 'none';
-            document.querySelector('.supplementary-note').style.display = 'none';
-
-            document.getElementById('completionMessage').style.display = 'block';
-        });
-        
-        document.addEventListener('touchstart', function() {}, {passive: true});
-    </script>
-</body>
-</html>
+                            <p>
