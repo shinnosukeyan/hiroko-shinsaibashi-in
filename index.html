@@ -11,8 +11,8 @@
         .header { background: linear-gradient(45deg, #1dd1a1, #10ac84); color: white; padding: 20px; text-align: center; }
         .header h1 { font-size: 1.4em; margin-bottom: 5px; }
         .time-notice { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 15px; margin: 20px; border-radius: 8px; text-align: center; font-weight: bold; }
-        .situation-header { padding: 15px; font-weight: bold; font-size: 1.1em; color: white; text-align: center; background: linear-gradient(45deg, #54a0ff, #2e86de); }
-        .situation-content { background: white; padding: 20px; }
+        .content-wrapper { padding: 0 20px 20px 20px; }
+        .situation-header { padding: 15px; font-weight: bold; font-size: 1.1em; color: white; text-align: center; background: linear-gradient(45deg, #54a0ff, #2e86de); border-radius: 8px; margin-top: 20px; }
         .step { background: #f8f9fa; border-left: 4px solid #007bff; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
         .step-number { background: #007bff; color: white; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9em; margin-right: 10px; }
         .real-image { width: 100%; max-width: 400px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 15px auto; display: block; }
@@ -50,76 +50,74 @@
                 深夜の時間帯 (22:30以降〜翌9:00) は、建物入口が閉まっている場合があります
             </div>
             
-            <div class="situation">
+            <div class="content-wrapper">
+                <p>写真のように建物入口が閉まっている場合は、大変お手数ですが、以下の手順で深夜キーをご利用ください。</p>
+                <img src="04.jpeg" alt="建物入口の扉" class="real-image">
+
                 <div class="situation-header">
                     🔒 建物入口が閉まっている場合の入室手順
                 </div>
-                <div class="situation-content">
-                    <p><strong>大変お手数ですが、以下の手順で深夜キーをご利用ください。</strong></p>
-                    <img src="04.jpeg" alt="建物入口の扉" class="real-image">
-                    <div class="image-caption">深夜キーでこの扉を解錠します</div>
 
-                    <div class="step">
-                        <span class="step-number">1</span>
-                        <strong>別の場所で「深夜キー」を受け取る</strong>
-                        <div class="location-info">
-                            <h4 class="info-header">📍 鍵の受取場所</h4>
-                            <p><strong>ミヤプラザ心斎橋</strong>（ラーメン一蘭心斎橋店のすぐ横）</p>
-                            <img src="05.jpeg" alt="ミヤプラザ心斎橋" class="real-image">
-                            <a href="https://maps.app.goo.gl/abcdef123456" target="_blank" class="map-link">🗺️ Googleマップで確認</a>
-                        </div>
-                        <p>「506ホワイトガーデン心斎橋」のポストを開け、中から深夜キーを取り出してください。</p>
-                        <img src="07.jpeg" alt="ポストを開ける" class="real-image">
-                        <div class="image-caption">青いケースごと取り出してください</div>
-                        <div class="video-section">
-                            <h4 class="info-header">🎥 ポストの開け方</h4>
-                            <p>暗証番号：<code class="code">左8 → 左8 → 右4</code></p>
-                            <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin: 10px 0;">
-                                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" src="https://www.youtube.com/embed/your_video_id" title="ポスト操作手順動画" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <p><strong>重要：</strong>キーを取り出したら、ポストの扉をしっかり閉めてください。</p>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>別の場所で「深夜キー」を受け取る</strong>
+                    <div class="location-info">
+                        <h4 class="info-header">📍 鍵の受取場所</h4>
+                        <p><strong>ミヤプラザ心斎橋</strong>（ラーメン一蘭心斎橋店のすぐ横）</p>
+                        <img src="05.jpeg" alt="ミヤプラザ心斎橋" class="real-image">
+                        <a href="https://maps.app.goo.gl/abcdef123456" target="_blank" class="map-link">🗺️ Googleマップで確認</a>
                     </div>
-
-                    <div class="step">
-                        <span class="step-number">2</span>
-                        <strong>深夜キーで建物のロックを「解錠」する</strong>
-                        <div class="caution-box">大変危険なため、シャッター自体の開閉は絶対にしないでください。</div>
-                        <p>レンタルスペースのある建物に戻り、先ほど取り出した深夜キーでシャッター横の扉を「解錠」して中に入ります。</p>
-                    </div>
-
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <strong>役割を終えた「深夜キー」を返却する</strong>
-                        <div class="key-info">
-                            <h4 class="info-header">🔑 深夜キーの返却場所</h4>
-                            <p>5階スペース前のキーボックス（暗証番号：<code class="code">4646</code>）に、使用した深夜キーを戻し、しっかり施錠してください。</p>
-                            <img src="01.jpeg" alt="キーボックス" class="real-image">
-                            <div class="image-caption">このキーボックスに深夜キーを戻します</div>
+                    <p>「506ホワイトガーデン心斎橋」のポストを開け、中から深夜キーを取り出してください。</p>
+                    <img src="07.jpeg" alt="ポストを開ける" class="real-image">
+                    <div class="image-caption">青いケースごと取り出してください</div>
+                    <div class="video-section">
+                        <h4 class="info-header">🎥 ポストの開け方</h4>
+                        <p>暗証番号：<code class="code">左8 → 左8 → 右4</code></p>
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin: 10px 0;">
+                            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" src="https://www.youtube.com/embed/your_video_id" title="ポスト操作手順動画" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
+                    <p><strong>重要：</strong>キーを取り出したら、ポストの扉をしっかり閉めてください。</p>
+                </div>
 
-                    <div class="step">
-                        <span class="step-number">4</span>
-                        <strong>本来の「スペースの鍵」で入室する</strong>
-                        <p>最後に、本来のスペース入室用のキーボックスを所定の暗証番号で開け、鍵を取り出してお部屋にご入室ください。</p>
-                    </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>深夜キーで建物のロックを「解錠」する</strong>
+                    <div class="caution-box">大変危険なため、シャッター自体の開閉は絶対にしないでください。</div>
+                    <p>レンタルスペースのある建物に戻り、先ほど取り出した深夜キーでシャッター横の扉を「解錠」して中に入ります。</p>
+                </div>
 
-                    <div class="completion-section">
-                        <div class="call-to-action">
-                            ⬇︎ すべての操作が完了したら… ⬇︎
-                        </div>
-                        <button id="completionBtn" class="completion-btn">
-                            ✅ 無事に入室し、深夜キーをキーボックスに返却しました
-                        </button>
-                        <div id="completionMessage" class="completion-message" style="display: none;">
-                            <p>✅ <strong>ようこそ！</strong></p>
-                            <p>入室のご報告、ありがとうございます。</p>
-                            <hr style="border:none; border-top:1px solid #c3e6cb; margin:10px 0;">
-                            <p style="font-weight:bold;">すべての操作は完了です。<br>このページは閉じていただいて大丈夫です。</p>
-                        </div>
-                        <p class="supplementary-note">※ご報告のため、最後に必ず押してください。</p>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>役割を終えた「深夜キー」を返却する</strong>
+                    <div class="key-info">
+                        <h4 class="info-header">🔑 深夜キーの返却場所</h4>
+                        <p>5階スペース前のキーボックス（暗証番号：<code class="code">4646</code>）に、使用した深夜キーを戻し、しっかり施錠してください。</p>
+                        <img src="01.jpeg" alt="キーボックス" class="real-image">
+                        <div class="image-caption">このキーボックスに深夜キーを戻します</div>
                     </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>本来の「スペースの鍵」で入室する</strong>
+                    <p>最後に、本来のスペース入室用のキーボックスを所定の暗証番号で開け、鍵を取り出してお部屋にご入室ください。</p>
+                </div>
+
+                <div class="completion-section">
+                    <div class="call-to-action">
+                        ⬇︎ すべての操作が完了したら… ⬇︎
+                    </div>
+                    <button id="completionBtn" class="completion-btn">
+                        ✅ 無事に入室し、深夜キーをキーボックスに返却しました
+                    </button>
+                    <div id="completionMessage" class="completion-message" style="display: none;">
+                        <p>✅ <strong>ようこそ！</strong></p>
+                        <p>入室のご報告、ありがとうございます。</p>
+                        <hr style="border:none; border-top:1px solid #c3e6cb; margin:10px 0;">
+                        <p style="font-weight:bold;">すべての操作は完了です。<br>このページは閉じていただいて大丈夫です。</p>
+                    </div>
+                    <p class="supplementary-note">※ご報告のため、最後に必ず押してください。</p>
                 </div>
             </div>
         </div>
