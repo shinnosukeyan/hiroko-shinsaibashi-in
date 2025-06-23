@@ -63,6 +63,9 @@
                     🔒 建物入口が閉まっている場合の入室手順
                 </div>
                 <div class="situation-content">
+                    <p>写真のように建物入口が閉まっている場合は、大変お手数ですが、以下の手順で深夜キーをご利用ください。</p>
+                    <img src="04.jpeg" alt="建物入口が閉まっている様子" class="real-image">
+                    <div class="image-caption">📷 この扉が閉まっている場合に、深夜キーを使います</div>
 
                     <div class="step">
                         <span class="step-number">1</span>
@@ -105,8 +108,9 @@
                         <strong>役割を終えた「深夜キー」を返却する</strong>
                         <div class="key-info">
                             <h4>深夜キーの返却場所</h4>
-                            <p>5階スペース前のキーボックスに、使用した深夜キーを戻し、しっかり施錠してください。</p>
+                            <p>5階スペース前のキーボックス</p>
                             <p>暗証番号：<code class="code">4646</code></p>
+                            <p>使用した深夜キーを戻し、しっかり施錠してください。</p>
                             <img src="01.jpeg" alt="キーボックス" class="real-image">
                             <div class="image-caption">📷 このキーボックスに深夜キーを戻します</div>
                         </div>
@@ -173,7 +177,7 @@
             formData.append('ブラウザ情報', navigator.userAgent);
             formData.append('_subject', '【通知】深夜キーを利用して入室がありました');
 
-            fetch('https://formspree.io/f/your_form_id', { // ← ご自身のFormspree IDに変更してください
+            fetch('https://formspree.io/f/myzjnklr', { // ← ご自身のFormspree IDに変更してください
                 method: 'POST',
                 body: formData,
                 headers: { 'Accept': 'application/json' }
